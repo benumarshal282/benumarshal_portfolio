@@ -1,0 +1,6 @@
+# How to report a security problem with this site.
+# Spec: https://www.rfc-editor.org/rfc/rfc9116
+Contact: mailto:benumarshal61@gmail.com
+Expires: 2027-11-23T00:00:00.000Z
+Preferred-Languages: en
+Policy: https://github.com/benumarshal282/benumarshal_portfolio/blob/main/SECURITY.md
