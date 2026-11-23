@@ -1,0 +1,14 @@
+# dependencies and build output (recreated by npm install / npm run build)
+node_modules
+dist
+
+# macOS and editor clutter
+.DS_Store
+*.log
+.vscode
+.idea
+
+# local-only settings
+.env
+.env.*
+.claude
