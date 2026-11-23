@@ -11,7 +11,7 @@ export const profile = {
   avatar: "", // your face in the top-left circle, e.g. "photos/me-face.jpg" (file in /public). Empty = the "BM" mark.
   // The repository the "Star" button in the hero points to ("user/repo").
   // Its star count is read live from GitHub; if the repo doesn't exist yet, the count is hidden.
-  repo: "benumarshal282/benumarshal-s_portfolio",
+  repo: "benumarshal282/benumarshal_portfolio",
   cv: "Benu-Marshal-CV.pdf", // file in /public — clicking the bouncing Steve opens it
   socials: [
     { label: "LinkedIn", href: "https://linkedin.com/in/benu-marshal" },
