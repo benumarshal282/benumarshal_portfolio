@@ -1,0 +1,10 @@
+{
+  // Tells Cloudflare what to publish: the built site in the `dist` folder.
+  // `name` must match the project name typed in Cloudflare.
+  // dist/_headers (made by the build) carries the site's security headers.
+  "name": "benumarshal",
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
