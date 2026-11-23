@@ -1,0 +1,112 @@
+/* Swap these tokens when the real design arrives. Components only read variables.
+
+   COLOURS: three themes, picked by THEME in src/App.jsx. Each follows the same
+   rule (from the handbook): one strong colour (--accent) used for small
+   accents and big flat blocks, one pale complementary tint (--accent-2) for
+   badges and soft blocks, on a calm page with plenty of space.
+     --bg        the page              --fg      main text
+     --bg-elev   panels                --muted   secondary text
+     --accent    the strong colour     --accent-ink  text on top of it
+     --accent-2  the pale tint         --accent-deep a darker accent (footer field)
+   Earlier looks are in /backup (purple-on-cream, and the dark amber one). */
+:root,
+:root[data-theme="cobalt"] {
+  /* cobalt blue + peach: bone page, near-black ink */
+  --bg: #f6f5f1;
+  --bg-elev: #ecebe5;
+  --fg: #12131a;
+  --muted: #55576a;
+  --accent: #2b3ee6;
+  --accent-ink: #ffffff;
+  --accent-2: #ffd8c9;
+  --accent-deep: #1c2ab4;
+  --border: rgba(18, 19, 26, 0.14);
+}
+
+:root[data-theme="forest"] {
+  /* deep green + coral: warm paper, green-black ink */
+  --bg: #f4f2eb;
+  --bg-elev: #e9e6dc;
+  --fg: #13201a;
+  --muted: #4f5d55;
+  --accent: #1f6a4c;
+  --accent-ink: #ffffff;
+  --accent-2: #ffcdbf;
+  --accent-deep: #134a34;
+  --border: rgba(19, 32, 26, 0.15);
+}
+
+:root[data-theme="lime"] {
+  /* graphite + lime: dark page, the only dark theme */
+  --bg: #111213;
+  --bg-elev: #1a1b1d;
+  --fg: #eeeee8;
+  --muted: #9c9d97;
+  --accent: #c6f432;
+  --accent-ink: #111213;
+  --accent-2: rgba(198, 244, 50, 0.16);
+  --accent-deep: #a6d11c;
+  --border: rgba(238, 238, 232, 0.14);
+}
+
+:root {
+  --s: 1.045;
+  /* whole-page size. 1 = the original size, 1.045 = 4.5% bigger */
+  --radius: 20px;
+  --font-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif; /* set wide and heavy for headings */
+  --font-body: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mark: "Instrument Serif", Georgia, "Times New Roman", serif;           /* the BM logo */
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --max: calc(1200px * var(--s));
+  --pad: clamp(20px, 5vw, 64px);
+  --nav-h: 76px;
+  --mesh-opacity: 0.42;
+  /* how strongly the green "Mesh drift" background shows. 0 = off, 1 = full */
+  --hire-w: 6.6rem;
+  /* width of the white "Hire me" pill */
+  --hire-room: 62px;
+  /* how far it can run to each side */
+}
+
+@media (max-width: 640px) {
+  :root {
+    --hire-w: 5.2rem;
+    --nav-h: 64px;
+  }
+}
+
+/* DARK MODE: switched on by the sun/moon toggle in the footer, which sets
+   data-mode="dark" on <html> and remembers the choice in the browser.
+   Same token names as above, so every section follows on its own. */
+:root[data-mode="dark"],
+:root[data-mode="dark"][data-theme="cobalt"] {
+  color-scheme: dark;
+  --bg: #0d0e13;
+  --bg-elev: #171821;
+  --fg: #ecedf2;
+  --muted: #9a9cae;
+  --accent: #4f62ff;
+  --accent-ink: #ffffff;
+  --accent-2: rgba(255, 190, 165, 0.16);
+  --accent-deep: #2b3ee6;
+  --border: rgba(236, 237, 242, 0.14);
+}
+
+:root[data-mode="dark"][data-theme="forest"] {
+  color-scheme: dark;
+  --bg: #0e1411;
+  --bg-elev: #17201b;
+  --fg: #e9efe9;
+  --muted: #95a39a;
+  --accent: #36a374;
+  --accent-ink: #ffffff;
+  --accent-2: rgba(255, 180, 160, 0.16);
+  --accent-deep: #1f6a4c;
+  --border: rgba(233, 239, 233, 0.14);
+}
+
+/* a short cross-fade while the mode changes, so the switch feels smooth */
+:root.mode-fade, :root.mode-fade *, :root.mode-fade *::before, :root.mode-fade *::after {
+  transition: background-color .45s ease, color .45s ease, border-color .45s ease, fill .45s ease !important;
+}
