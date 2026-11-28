@@ -7,7 +7,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 const KEY = "site-mode";
 
 export function readMode() {
-  try { return localStorage.getItem(KEY) === "light" ? "light" : "dark"; } catch { return "dark"; }
+  try { return localStorage.getItem(KEY) === "dark" ? "dark" : "light"; } catch { return "light"; }
 }
 export function applyMode(mode) {
   document.documentElement.dataset.mode = mode;
